@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;     /* Prevent horizontal scrolling */
 }
 
-/* Pseudo-element for background image with 70% opacity */
+/* Container for the video background */
 body::before {
   content: ''; /* Required for pseudo-element */
   position: absolute;
@@ -19,12 +19,18 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('images/MapBG.jpg'); /* Set the custom MapBG as the background */
-  background-size: cover; /* Make sure the background covers the full page */
-  background-position: center center; /* Center the background image */
-  background-attachment: fixed; /* Keep the background fixed during scroll */
-  opacity: 0.7; /* Apply opacity to the background */
   z-index: -1; /* Place it behind the content */
+}
+
+/* Set the video as a background */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the whole screen */
+  z-index: -1; /* Ensure it's behind other content */
 }
 
 /* Container for the game content */
@@ -107,14 +113,14 @@ h1 {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: #996633;
   color: #fff;
   border: none;
   border-radius: 5px;
 }
 
 #reset:hover {
-  background-color: #0056b3;
+  background-color: #660000;
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */

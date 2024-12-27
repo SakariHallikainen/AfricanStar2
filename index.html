@@ -7,7 +7,20 @@
   <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
 </head>
 <body>
+  <!-- Video Background -->
+  <video class="video-background" autoplay muted loop>
+    <source src="video/AnimateBG.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <div class="container">
+    <div class="language-selector">
+      <label for="language">Language:</label>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="fi">Finnish</option>
+      </select>
+    </div>
     <h1>Choose a deck!</h1>
     <div class="game-board">
       <!-- Replaced text buttons with images -->
