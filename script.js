@@ -1,7 +1,7 @@
 // Translations for English and Finnish
 const translations = {
   en: {
-    header: "Choose a deck!",
+    header: "",
     piles: {
       pile1: [
         "Uhm, nothing here?",
@@ -21,7 +21,7 @@ const translations = {
     }
   },
   fi: {
-    header: "Valitse pakka!",
+    header: "",
     piles: {
       pile1: [
         "Öh, täällä ei ole mitään?",
@@ -45,15 +45,56 @@ const translations = {
 let currentLanguage = "en"; // Default language is English
 let piles = translations[currentLanguage].piles; // Initialize piles based on the default language
 
-// Function to update the UI text
 function updateLanguage() {
   const lang = translations[currentLanguage];
 
   // Update the header
   document.querySelector("h1").textContent = lang.header;
 
-  // Update the piles object dynamically
-  piles = lang.piles;
+  // Update the piles content (images and text)
+  document.querySelectorAll('.pile').forEach((pile) => {
+    const pileId = pile.id;
+    const pileImage = pile.querySelector('.pile-image');
+
+    // Check if language is Finnish, change image accordingly
+    if (currentLanguage === 'fi') {
+      switch (pileId) {
+        case 'pile1':
+          pileImage.src = 'images/EmptybaseFI.jpg'; // Finnish image for pile 1
+          break;
+        case 'pile2':
+          pileImage.src = 'images/BanditbaseFI.jpg'; // Finnish image for pile 2
+          break;
+        case 'pile3':
+          pileImage.src = 'images/HorseshoebaseFI.jpg'; // Finnish image for pile 3
+          break;
+      }
+    } else {
+      // Default to English images if not Finnish
+      switch (pileId) {
+        case 'pile1':
+          pileImage.src = 'images/Emptybase.jpg'; // English image for pile 1
+          break;
+        case 'pile2':
+          pileImage.src = 'images/Banditbase.jpg'; // English image for pile 2
+          break;
+        case 'pile3':
+          pileImage.src = 'images/Horseshoebase.jpg'; // English image for pile 3
+          break;
+      }
+    }
+  });
+
+  // Update `piles` variable to match the new language
+  piles = translations[currentLanguage].piles;
+
+  // Reset the result text after changing language
+  const resultElement = document.getElementById("result");
+  if (currentLanguage === 'fi') {
+    resultElement.innerHTML = '<p>Valitse pakka ja aloita peli!</p>'; // Default Finnish message
+  } else {
+    resultElement.innerHTML = '<p>Choose a deck and start the game!</p>'; // Default English message
+  }
 }
 
 // Function to handle a card pick
@@ -72,10 +113,13 @@ function pickCard(pileId) {
   selectedPile.classList.remove('hidden'); // Ensure visibility
   selectedPile.classList.add('scale-up'); // Apply scaling animation
 
-  // Display the result message
-  document.getElementById("result").innerHTML = `
-    <p>${randomCard}</p>
-  `;
+  // Display the result message based on the current language
+  const resultElement = document.getElementById("result");
+  const lang = translations[currentLanguage]; // Get the current language translations
+
+  // Show result text based on the picked card
+  resultElement.innerHTML = `<p>${randomCard}</p>`;
+  resultElement.style.display = 'block'; // Make sure result box is shown
 }
 
 // Add event listeners to piles
@@ -89,13 +133,19 @@ document.getElementById("language").addEventListener("change", (event) => {
   updateLanguage(); // Update the text and piles
 });
 
+
 // Reset game
 document.getElementById("reset").addEventListener("click", () => {
   document.getElementById("result").innerHTML = ""; // Clear result
-  
+  document.getElementById("result").style.display = 'none'; // Hide result box when reset
+
   // Reset all piles to their original state
   document.querySelectorAll('.pile').forEach(pile => {
     pile.classList.remove('hidden'); // Make all piles visible
     pile.classList.remove('scale-up'); // Remove scale-up effect
   });
+
+  // Reset the result text based on the current language
+  updateLanguage();
 });
+

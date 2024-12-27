@@ -35,12 +35,12 @@ body::before {
 
 /* Container for the game content */
 .container {
-  width: 100%;             /* Allow the container to be flexible */
-  max-width: 600px;        /* Limit the maximum width for larger screens */
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent white background */
-  border-radius: 8px;      /* Add rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 80%;             /* Allow the container to be flexible */
+  max-width: 1200px;        /* Limit the maximum width for larger screens */
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.0); /* Slightly transparent white background */
+  border-radius: 12px;      /* Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0); /* Subtle shadow */
   text-align: center;      /* Center text within the container */
   box-sizing: border-box;  /* Ensure padding is included in the width */
 }
@@ -49,14 +49,59 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* Style the language selector container */
+.language-selector {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Style the dropdown itself */
+#language {
+  padding: 10px 10px;          /* Add padding for spacing */
+  font-size: 16px;             /* Larger font size */
+  font-family: 'Arial', sans-serif; /* Set a clean font */
+  border: 2px solid #996633;   /* Border color */
+  border-radius: 8px;          /* Rounded corners */
+  background-color: #fff;      /* White background */
+  color: #333;                 /* Text color */
+  cursor: pointer;            /* Pointer cursor on hover */
+  transition: all 0.5s ease;   /* Smooth transition for effects */
+  appearance: none;            /* Remove default dropdown arrow */
+  -webkit-appearance: none;    /* For Safari */
+  -moz-appearance: none;       /* For Firefox */
+  width: 130px;                /* Set a fixed width */
+}
+
+/* Hover effect for the dropdown */
+#language:hover {
+  border-color: #660000;       /* Change border color on hover */
+  background-color: #DEB887;   /* Light gray background on hover */
+}
+
+/* Focus effect for accessibility */
+#language:focus {
+  outline: none;               /* Remove default outline */
+  border-color: #0056b3;       /* Change border color on focus */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Add a subtle blue outline */
+}
+
+/* Style for language selector label */
+.language-selector label {
+  font-size: 18px;             /* Slightly larger font for label */
+  font-weight: bold;           /* Make label text bold */
+  margin-right: 10px;          /* Space between label and dropdown */
+}
+
+
 /* Game board container */
 .game-board {
   display: flex;
   justify-content: center;
-  gap: 5px;  /* Reduced gap between piles */
-  margin-bottom: 20px;
+  gap: 15px;  /* Reduced gap between piles */
+  margin-bottom: 30px;
   position: relative;
-  transition: all 0.3s ease; /* Smooth transition for positioning */
+  transition: all 0.5s ease; /* Smooth transition for positioning */
 }
 
 /* Piles will now be images instead of buttons */
@@ -96,12 +141,24 @@ h1 {
   z-index: 2;             /* Make sure it's above the other piles */
 }
 
+#result:empty {
+  padding: 0;
+}
+
 #result {
+  display: none;
   font-size: 18px;         /* Adjusted for better readability */
+  padding: 20px;
   margin: 10px auto;       /* Reduced margin between the result text and other elements */
   max-width: 80%;          /* Limit the width of result text */
   word-wrap: break-word;   /* Wrap text to avoid overflow */
-  white-space: pre-wrap;   /* Preserve spaces and allow wrapping */
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+  border-radius: 12px;      /* Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  width: 100%;             /* Allow the container to be flexible */
+  max-width: 500px;        /* Limit the maximum width for larger screens */
+  text-align: center;      /* Center text within the container */
+  box-sizing: border-box;  /* Ensure padding is included in the width */
 }
 
 /* Added to make the space between result text and the pile image smaller */
@@ -124,14 +181,14 @@ h1 {
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .container {
-    padding: 15px;         /* Reduce padding */
-    max-width: 90%;        /* Allow container to take more width */
+    padding: 5px;         /* Reduce padding */
+    max-width: 80%;        /* Allow container to take more width */
   }
 
   .game-board {
-    gap: 3px;              /* Reduced gap between piles on mobile */
+    gap: 2px;              /* Reduced gap between piles on mobile */
   }
 
   .pile {
@@ -140,7 +197,7 @@ h1 {
   }
 
   .pile-image {
-    width: 90%;             /* Ensure images fit in the pile */
+    width: 100%;             /* Ensure images fit in the pile */
     margin: 0 auto;         /* Center images in their container */
   }
 }
