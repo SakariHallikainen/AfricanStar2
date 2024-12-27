@@ -51,9 +51,9 @@ function pickCard(pileId) {
   selectedPile.classList.remove('hidden'); // Ensure the chosen pile is visible
   selectedPile.classList.add('scale-up');  // Apply scale-up animation
 
-  // Display the result
+  // Display the result without "You picked:" part
   document.getElementById("result").innerHTML = `
-    <p>You picked: ${randomCard.text}</p>
+    <p>${randomCard.text}</p> <!-- Just the result text -->
   `;
 }
 
