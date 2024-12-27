@@ -8,6 +8,7 @@ body {
   align-items: center;    /* Vertical centering */
   min-height: 100vh;      /* Ensure the height covers the full viewport */
   position: relative;     /* Create a stacking context for the pseudo-element */
+  overflow-x: hidden;     /* Prevent horizontal scrolling */
 }
 
 /* Pseudo-element for background image with 70% opacity */
@@ -28,22 +29,25 @@ body::before {
 
 /* Container for the game content */
 .container {
-  max-width: 50%;         /* Limit the width of the container */
+  width: 100%;             /* Allow the container to be flexible */
+  max-width: 600px;        /* Limit the maximum width for larger screens */
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent white background */
-  border-radius: 8px;     /* Add rounded corners */
+  border-radius: 8px;      /* Add rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  text-align: center;     /* Center text within the container */
+  text-align: center;      /* Center text within the container */
+  box-sizing: border-box;  /* Ensure padding is included in the width */
 }
 
 h1 {
   margin-bottom: 20px;
 }
 
+/* Game board container */
 .game-board {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 5px;  /* Reduced gap between piles */
   margin-bottom: 20px;
   position: relative;
   transition: all 0.3s ease; /* Smooth transition for positioning */
@@ -54,11 +58,14 @@ h1 {
   cursor: pointer;
   transition: transform 0.3s ease, opacity 1s ease;
   opacity: 1; /* Start fully visible */
+  flex: 1 1 33%;  /* Each pile takes up a third of the space */
+  max-width: 33%;  /* Ensure piles don't get too large */
+  margin: 0 5px;   /* Reduced margin between piles */
 }
 
 .pile-image {
-  width: 150px;   /* Set a size for the images */
-  height: auto;   /* Keep the aspect ratio intact */
+  width: 100%;    /* Make sure images take up the full width of their container */
+  height: auto;   /* Maintain aspect ratio */
   border-radius: 8px;  /* Optional: Rounded corners for images */
 }
 
@@ -85,7 +92,49 @@ h1 {
 
 #result {
   font-size: 18px;         /* Adjusted for better readability */
-  margin: 20px auto;       /* Center and space the result */
+  margin: 10px auto;       /* Reduced margin between the result text and other elements */
   max-width: 80%;          /* Limit the width of result text */
   word-wrap: break-word;   /* Wrap text to avoid overflow */
-  white-space: pre-wrap;   /* Pr
+  white-space: pre-wrap;   /* Preserve spaces and allow wrapping */
+}
+
+/* Added to make the space between result text and the pile image smaller */
+#result p {
+  margin-top: 5px; /* Reduce the space between the text and the pile */
+}
+
+#reset {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+#reset:hover {
+  background-color: #0056b3;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;         /* Reduce padding */
+    max-width: 90%;        /* Allow container to take more width */
+  }
+
+  .game-board {
+    gap: 3px;              /* Reduced gap between piles on mobile */
+  }
+
+  .pile {
+    max-width: 100%;        /* Allow piles to take up full width on mobile */
+    flex: 1 1 100%;         /* Make piles take up full width on small screens */
+  }
+
+  .pile-image {
+    width: 90%;             /* Ensure images fit in the pile */
+    margin: 0 auto;         /* Center images in their container */
+  }
+}
