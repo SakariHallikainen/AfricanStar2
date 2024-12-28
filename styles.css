@@ -36,7 +36,7 @@ body::before {
 /* Container for the game content */
 .container {
   width: 80%;             /* Allow the container to be flexible */
-  max-width: 1200px;        /* Limit the maximum width for larger screens */
+  max-width: 1000px;        /* Limit the maximum width for larger screens */
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.0); /* Slightly transparent white background */
   border-radius: 12px;      /* Add rounded corners */
@@ -101,13 +101,13 @@ h1 {
   gap: 15px;  /* Reduced gap between piles */
   margin-bottom: 30px;
   position: relative;
-  transition: all 0.5s ease; /* Smooth transition for positioning */
+  transition: all 1s ease; /* Smooth transition for positioning */
 }
 
 /* Piles will now be images instead of buttons */
 .pile {
   cursor: pointer;
-  transition: transform 0.3s ease, opacity 1s ease;
+  transition: transform 0.5s ease, opacity 1s ease;
   opacity: 1; /* Start fully visible */
   flex: 1 1 33%;  /* Each pile takes up a third of the space */
   max-width: 33%;  /* Ensure piles don't get too large */
@@ -118,6 +118,7 @@ h1 {
   width: 100%;    /* Make sure images take up the full width of their container */
   height: auto;   /* Maintain aspect ratio */
   border-radius: 8px;  /* Optional: Rounded corners for images */
+  box-shadow: 6px 6px 8px 1px rgba(0, 0, 0, 0.25); /* Add a subtle blue outline */
 }
 
 .pile:hover {
@@ -126,10 +127,16 @@ h1 {
 
 /* When a pile is hidden (unselected), fade out */
 .pile.hidden {
+  transform: scale(0.5);
   opacity: 0;
   visibility: hidden; /* Hide elements completely */
-  transition: opacity 1s ease-out, visibility 0s ease 1s; /* Fade-out for non-chosen piles */
+  transition: transform 1s ease, opacity 1s ease-out, visibility 1s ease 1s; /* Fade-out for non-chosen piles */
 }
+
+.pile.hidden:hover {
+  transform: scale(1.0);   /* Slight zoom-in effect when hovering over piles */
+}
+
 
 /* When a pile is scaled-up and centered */
 .pile.scale-up {
