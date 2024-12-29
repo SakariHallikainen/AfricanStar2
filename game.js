@@ -6,70 +6,63 @@ const translations = {
     piles: {
       pile1: [
         "Uhm, nothing here?",
-        "You find an odd-looking coin. After a more careful examination and a little dusting, it seems to be an old gold coin from ancient times. You 	take it to a pawn store that is willing to pay you 200 for it. Nice!",
+        "You find an odd-looking coin. After a more careful examination and a little dusting, it seems to be an old gold coin from ancient times. You take it to a pawn store that is willing to pay you 200 for it. Nice!",
         "You stumble on a little rock on your path and hit your head pretty bad. Skip your next turn to recover.",
-	      "Hmm, just the sound of the wind.",
-	      "What is that on the ground? Wow, a free plane ticket! Keep this piece and use it for 1 free flight whenever.",
-	      "Looks like someone has dug a hole in the ground and tried to cover it. You get excited and start digging, but lose the track of time while 	doing it. Skip your next turn. But boy was it worth it, you find 300!",
-
+        "Hmm, just the sound of the wind.",
+        "What is that on the ground? Wow, a free plane ticket! Keep this piece and use it for 1 free flight whenever.",
+        "Looks like someone has dug a hole in the ground and tried to cover it. You get excited and start digging, but lose track of time while doing it. Skip your next turn. But boy, was it worth it? You find 300!",
       ],
       pile2: [
         "You are ambushed by a group of bandits and lose all your money. Gosh!",
-        "You are surrounded by a band of thieves, but you manage to talk yourself out by giving the location information of other players. You get to 	keep your money, but all other players lose 300.",
+        "You are surrounded by a band of thieves, but you manage to talk yourself out by giving the location information of other players. You get to keep your money, but all other players lose 300.",
         "An unnoticed shoplifter manages to snatch 300 from you. Whoops!",
-	      "Opportunity makes a thief. The local bank has left a door cracked. You enter and grab a handful of bills, and it so happens that they are 	savings of other players. Collect 100 from each player.",
-	      "Why is travelling by boat so expensive? Why not just sneak in and hide in a barrel? Of course! <br> Keep this piece and use it to get 1 free 	boat ride.",
-	      "Tired of travelling, you take a nap. However, you wake up a 100 poorer. Unlucky!"
-
+        "Opportunity makes a thief. The local bank has left a door cracked. You enter and grab a handful of bills, and it so happens that they are savings of other players. Collect 100 from each player.",
+        "Why is traveling by boat so expensive? Why not just sneak in and hide in a barrel? Of course! <br> Keep this piece and use it to get 1 free boat ride.",
+        "Tired of traveling, you take a nap. However, you wake up 100 poorer. Unlucky!",
       ],
       pile3: [
-      "A golden horseshoe! You have three choices: <br> 1) Exchange it to 100. <br> 2) If you take it to Gold Coast, you can exhange it to 300. 	<br> 3) If you take it to Capetown, you can exchange it to 500.",
-      "A caravan approaches. The owner offers a free ride to St. Helena island. Take it or leave it!",
-      "Unlucky! A horseshoe falls from above and knocks you out. What are the odds? Rest for the next turn.",
-      "You find a lone camel wandering. On your next turn, you can travel twice the distance you roll.",
-      "Mess another player's compass. Choose a player and move them 4 steps in any direction you like."
-	
-	
-      ]
-    }
+        "A golden horseshoe! You have three choices: <br> 1) Exchange it for 100. <br> 2) If you take it to Gold Coast, you can exchange it for 300. <br> 3) If you take it to Capetown, you can exchange it for 500.",
+        "A caravan approaches. The owner offers a free ride to St. Helena island. Take it or leave it!",
+        "Unlucky! A horseshoe falls from above and knocks you out. What are the odds? Rest for the next turn.",
+        "You find a lone camel wandering. On your next turn, you can travel twice the distance you roll.",
+        "Mess with another player's compass. Choose a player and move them 4 steps in any direction you like.",
+      ],
+    },
   },
   fi: {
     header: "",
     piles: {
       pile1: [
         "Öh, ei mitään täällä?",
-        "Löydät oudon näköisen kolikon. Tarkasteltuasi sitä lähemmin ja pienen putsauksen jälkeen se osoittautuukin vanhaksi kultakolikoksi muinaisilta 	ajoilta. Viet sen panttiliikkeeseen, joka on valmis maksamaan siitä 200. Mahtavaa!",
+        "Löydät oudon näköisen kolikon. Tarkasteltuasi sitä lähemmin ja pienen putsauksen jälkeen se osoittautuukin vanhaksi kultakolikoksi muinaisilta ajoilta. Viet sen panttiliikkeeseen, joka on valmis maksamaan siitä 200. Mahtavaa!",
         "Kompastut matkalla pieneen kiveen ja lyöt pääsi aika pahasti. Jätä seuraava vuorosi väliin toipuaksesi.",
         "Hmm, vain tuulen huminaa.",
         "Mikäs tuossa maassa on? Vau, ilmainen lentolippu! Säilytä tämä merkki ja käytä se yhteen ilmaiseen lentoon milloin tahansa.",
-        "Näyttää siltä, että joku on kaivanut kuopan maahan ja yrittänyt peittää sen. Innostut ja alat kaivaa, mutta kadotat ajantajun kaivaessasi. Jätä 	seuraava vuorosi väliin. Mutta kyllä kannatti, löydät 300!",
+        "Näyttää siltä, että joku on kaivanut kuopan maahan ja yrittänyt peittää sen. Innostut ja alat kaivaa, mutta kadotat ajantajun kaivaessasi. Jätä seuraava vuorosi väliin. Mutta kyllä kannatti, löydät 300!",
       ],
       pile2: [
         "Joudut rosvojoukon väijytykseen ja menetät kaikki rahasi. Voi ei!",
-        "Sinut piirittää joukko varkaita, mutta onnistut puhumaan itsesi ulos tilanteesta kertomalla muiden pelaajien sijaintitiedot. Saat pitää rahasi, 	mutta kaikki muut pelaajat menettävät 300.",
+        "Sinut piirittää joukko varkaita, mutta onnistut puhumaan itsesi ulos tilanteesta kertomalla muiden pelaajien sijaintitiedot. Saat pitää rahasi, mutta kaikki muut pelaajat menettävät 300.",
         "Huomaamaton näpistelijä onnistuu viemään sinulta 300. Hupsis!",
-        "Tilaisuus tekee varkaan. Paikallinen pankki on jättänyt oven raolleen. Astut sisään ja nappaat nipun seteleitä, ja sattumalta ne ovat muiden 	pelaajien säästöjä. Kerää 100 kaikilta muilta pelaajilta.",
-        "Miksi laivamatkat ovat niin kalliit? Miksi en vain hiipisi sisään ja piiloutuisi tynnyriin? Tietenkin! <br> Säilytä tämä esine ja käytä se 	yhteen ilmaiseen venematkaan.",
-        "Matkaamisesta väsyneenä otat torkut. Mutta heräät myös 100 köyhempänä. Oi voi!"
+        "Tilaisuus tekee varkaan. Paikallinen pankki on jättänyt oven raolleen. Astut sisään ja nappaat nipun seteleitä, ja sattumalta ne ovat muiden pelaajien säästöjä. Kerää 100 kaikilta muilta pelaajilta.",
+        "Miksi laivamatkat ovat niin kalliit? Miksi en vain hiipisi sisään ja piiloutuisi tynnyriin? Tietenkin! <br> Säilytä tämä esine ja käytä se yhteen ilmaiseen venematkaan.",
+        "Matkaamisesta väsyneenä otat torkut. Mutta heräät myös 100 köyhempänä. Oi voi!",
       ],
       pile3: [
-       "Kultainen hevosenkenkä! Sinulla on kolme vaihtoehtoa: <br> 1) Vaihda se 100 rahaan. <br> 2) Jos viet sen Gold Coastiin, voit vaihtaa sen 300 	rahaan. <br> 3) Jos viet sen Capetowniin, voit vaihtaa sen 500 rahaan.",
-    "Karavaani lähestyy. Omistaja tarjoaa ilmaisen kyydin St. Helenan saarelle. Ota tai jätä?",
-    "Epäonnea! Hevosenkenkä putoaa jostakin päähäsi ja menetät tajuntasi. Mikä todennäköisyys! Lepää seuraava vuoro.",
-    "Löydät yksinäisen kamelin vaeltelemassa. Seuraavalla vuorollasi voit matkustaa tuplasti pidemmälle kuin heittämäsi nopan luku.",
-    "Sotke toisen pelaajan kompassi. Valitse yksi pelaaja ja liikuta hänen nappulaansa 4 askelta valitsemaasi suuntaan."
-      ]
-    }
-  }
+        "Kultainen hevosenkenkä! Sinulla on kolme vaihtoehtoa: <br> 1) Vaihda se 100 rahaan. <br> 2) Jos viet sen Gold Coastiin, voit vaihtaa sen 300 rahaan. <br> 3) Jos viet sen Capetowniin, voit vaihtaa sen 500 rahaan.",
+        "Karavaani lähestyy. Omistaja tarjoaa ilmaisen kyydin St. Helenan saarelle. Ota tai jätä?",
+        "Epäonnea! Hevosenkenkä putoaa jostakin päähäsi ja menetät tajuntasi. Mikä todennäköisyys! Lepää seuraava vuoro.",
+        "Löydät yksinäisen kamelin vaeltelemassa. Seuraavalla vuorollasi voit matkustaa tuplasti pidemmälle kuin heittämäsi nopan luku.",
+        "Sotke toisen pelaajan kompassi. Valitse yksi pelaaja ja liikuta hänen nappulaansa 4 askelta valitsemaasi suuntaan.",
+      ],
+    },
+  },
 };
-
-
-
-
-
 
 let currentLanguage = "en"; // Default language is English
 let piles = translations[currentLanguage].piles; // Initialize piles based on the default language
+
+let cardPicked = false; // Track whether a card has been picked or not
 
 function updateLanguage() {
   const lang = translations[currentLanguage];
@@ -114,12 +107,17 @@ function updateLanguage() {
   // Update `piles` variable to match the new language
   piles = translations[currentLanguage].piles;
 
-  // Reset the result text after changing language
-  const resultElement = document.getElementById("result");
-  if (currentLanguage === 'fi') {
-    resultElement.innerHTML = '<p>Valitse pakka ja aloita peli!</p>'; // Default Finnish message
-  } else {
-    resultElement.innerHTML = '<p>Choose a deck and start the game!</p>'; // Default English message
+  // Hide the reset buttons initially
+  document.getElementById("reset").style.display = 'none';
+  document.getElementById("reset-fi").style.display = 'none';
+
+  // Toggle visibility of reset buttons based on language (after a card has been picked)
+  if (cardPicked) {
+    if (currentLanguage === 'fi') {
+      document.getElementById("reset-fi").style.display = 'inline-block';  // Show Finnish reset button
+    } else {
+      document.getElementById("reset").style.display = 'inline-block';  // Show English reset button
+    }
   }
 }
 
@@ -146,6 +144,15 @@ function pickCard(pileId) {
   // Show result text based on the picked card
   resultElement.innerHTML = `<p>${randomCard}</p>`;
   resultElement.style.display = 'block'; // Make sure result box is shown
+
+  // Show the reset button (now only show the correct one based on language)
+  cardPicked = true; // A card has been picked
+
+  if (currentLanguage === 'fi') {
+    document.getElementById("reset-fi").style.display = 'inline-block'; // Show Finnish reset button
+  } else {
+    document.getElementById("reset").style.display = 'inline-block'; // Show English reset button
+  }
 }
 
 // Add event listeners to piles
@@ -159,8 +166,7 @@ document.getElementById("language").addEventListener("change", (event) => {
   updateLanguage(); // Update the text and piles
 });
 
-
-// Reset game
+// Reset game (for English reset button)
 document.getElementById("reset").addEventListener("click", () => {
   document.getElementById("result").innerHTML = ""; // Clear result
   document.getElementById("result").style.display = 'none'; // Hide result box when reset
@@ -173,5 +179,29 @@ document.getElementById("reset").addEventListener("click", () => {
 
   // Reset the result text based on the current language
   updateLanguage();
+
+  // Hide the reset button again after reset
+  cardPicked = false; // Reset cardPicked state
+  document.getElementById("reset").style.display = 'none'; // Hide the English reset button
+  document.getElementById("reset-fi").style.display = 'none'; // Hide the Finnish reset button
 });
 
+// Reset game (for Finnish reset button)
+document.getElementById("reset-fi").addEventListener("click", () => {
+  document.getElementById("result").innerHTML = ""; // Clear result
+  document.getElementById("result").style.display = 'none'; // Hide result box when reset
+
+  // Reset all piles to their original state
+  document.querySelectorAll('.pile').forEach(pile => {
+    pile.classList.remove('hidden'); // Make all piles visible
+    pile.classList.remove('scale-up'); // Remove scale-up effect
+  });
+
+  // Reset the result text based on the current language
+  updateLanguage();
+
+  // Hide the reset button again after reset
+  cardPicked = false; // Reset cardPicked state
+  document.getElementById("reset").style.display = 'none'; // Hide the English reset button
+  document.getElementById("reset-fi").style.display = 'none'; // Hide the Finnish reset button
+});

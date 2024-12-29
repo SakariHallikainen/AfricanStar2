@@ -184,7 +184,8 @@ h1 {
   margin-top: 5px; /* Reduce the space between the text and the pile */
 }
 
-#reset {
+#reset, #reset-fi {
+  display: none; /* Initially hide the reset button */
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -194,7 +195,7 @@ h1 {
   border-radius: 5px;
 }
 
-#reset:hover {
+#reset:hover, #reset-fi:hover {
   background-color: #660000;
 }
 
