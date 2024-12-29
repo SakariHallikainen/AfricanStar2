@@ -4,44 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>African Star II</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      transition: filter 2s ease;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 6rem;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+      margin: 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .click-text {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .click-area {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+
+
+  </style>
 </head>
 <body>
-  <!-- Video Background -->
   <video class="video-background" autoplay muted loop>
     <source src="video/AnimateBG.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
   <div class="container">
-    <div class="language-selector">
-      <select id="language">
-        <option value="en">English</option>
-        <option value="fi">Finnish</option>
-      </select>
-    </div>
-
-    <h1></h1>
-
-    <div class="game-board">
-      <!-- Replaced text buttons with images -->
-      <div class="pile" id="pile1">
-        <img src="images/Emptybase.jpg" alt="Empty Pile" class="pile-image">
-      </div>
-      <div class="pile" id="pile2">
-        <img src="images/Banditbase.jpg" alt="Thief Pile" class="pile-image">
-      </div>
-      <div class="pile" id="pile3">
-        <img src="images/Horseshoebase.jpg" alt="Horseshoe Pile" class="pile-image">
-      </div>
-    </div>
-    <div id="result">
-      <!-- Result with message will show here -->
-	<p class="text-result">
-    </div>
-    <button id="reset">Reset Game</button>
+    <h1>African Star II</h1>
+    <p class="click-text">Click anywhere to start</p>
   </div>
 
-  <script src="script.js"></script> <!-- Link your JavaScript file -->
+  <div class="click-area" id="click-area"></div>
+
+  <script>
+    const clickArea = document.querySelector('#click-area');
+    const body = document.body;
+    const videoBackground = document.querySelector('.video-background');
+    const clickText = document.querySelector('.click-text');
+    const container = document.querySelector('.container');
+
+    setTimeout(() => {
+      videoBackground.style.filter = 'blur(5px)';
+    }, 1000);
+
+    clickArea.addEventListener('click', () => {
+      container.classList.add('fade-out');
+      videoBackground.style.filter = 'none';
+
+      setTimeout(() => {
+        window.location.href = 'game.html'; // Transition to the game page
+      }, 0);
+    });
+  </script>
 </body>
 </html>

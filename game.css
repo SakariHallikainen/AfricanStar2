@@ -1,0 +1,221 @@
+/* Instructions to upload to GitHub:
+1) cd to your project folder (e.g., cd ~/Desktop/AfricanStar_II).
+2) Use git add .
+3) Use git commit -m "Your message".
+4) Use git push origin master. */
+
+
+
+
+/* Center the game in the viewport */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center;     /* Vertically center */
+  min-height: 100vh;       /* Full viewport height */
+  position: relative;      /* Stacking context for pseudo-element */
+  overflow-x: hidden;      /* Prevent horizontal scrolling */
+}
+
+/* Video background container */
+body::before {
+  content: '';             /* Required for pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;             /* Behind the content */
+}
+
+/* Video background styling */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Cover the whole screen */
+  z-index: -1;             /* Behind other content */
+}
+
+/* Game content container */
+.container {
+  width: 80%;              /* Flexible width */
+  max-width: 1000px;       /* Max width for larger screens */
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0); /* Transparent background */
+  border-radius: 12px;     /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0); /* Subtle shadow */
+  text-align: center;      /* Center text */
+  box-sizing: border-box;  /* Include padding in width */
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Style the language selector container */
+.language-selector {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Style the dropdown itself */
+#language {
+  padding: 10px 10px;          /* Add padding for spacing */
+  font-size: 16px;             /* Larger font size */
+  font-family: 'Arial', sans-serif; /* Set a clean font */
+  border: 2px solid #996633;   /* Border color */
+  border-radius: 8px;          /* Rounded corners */
+  background-color: #fff;      /* White background */
+  color: #333;                 /* Text color */
+  cursor: pointer;            /* Pointer cursor on hover */
+  transition: all 0.5s ease;   /* Smooth transition for effects */
+  appearance: none;            /* Remove default dropdown arrow */
+  -webkit-appearance: none;    /* For Safari */
+  -moz-appearance: none;       /* For Firefox */
+  width: 130px;                /* Set a fixed width */
+}
+
+/* Hover effect for the dropdown */
+#language:hover {
+  border-color: #660000;       /* Change border color on hover */
+  background-color: #DEB887;   /* Light gray background on hover */
+}
+
+/* Focus effect for accessibility */
+#language:focus {
+  outline: none;               /* Remove default outline */
+  border-color: #0056b3;       /* Change border color on focus */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Add a subtle blue outline */
+}
+
+/* Style for language selector label */
+.language-selector label {
+  font-size: 18px;             /* Slightly larger font for label */
+  font-weight: bold;           /* Make label text bold */
+  margin-right: 10px;          /* Space between label and dropdown */
+}
+
+
+/* Game board container */
+.game-board {
+  display: flex;
+  justify-content: center;
+  gap: 15px;  /* Reduced gap between piles */
+  margin-bottom: 30px;
+  position: relative;
+  transition: all 1s ease; /* Smooth transition for positioning */
+}
+
+/* Piles will now be images instead of buttons */
+.pile {
+  cursor: pointer;
+  transition: transform 0.5s ease, opacity 1s ease;
+  opacity: 1; /* Start fully visible */
+  flex: 1 1 33%;  /* Each pile takes up a third of the space */
+  max-width: 33%;  /* Ensure piles don't get too large */
+  margin: 0 5px;   /* Reduced margin between piles */
+}
+
+.pile-image {
+  width: 100%;    /* Make sure images take up the full width of their container */
+  height: auto;   /* Maintain aspect ratio */
+  border-radius: 8px;  /* Optional: Rounded corners for images */
+  box-shadow: 6px 6px 8px 1px rgba(0, 0, 0, 0.25); /* Add a subtle shadow */
+}
+
+/* When hovering, apply scaling, but don't affect scale-up piles */
+.pile:not(.scale-up):hover {
+  transform: scale(1.1);   /* Slight zoom-in effect when hovering over piles */
+}
+
+/* When a pile is hidden (unselected), fade out */
+.pile.hidden {
+  transform: scale(0.5);
+  opacity: 0;
+  visibility: hidden; /* Hide elements completely */
+  transition: transform 1s ease, opacity 1s ease-out, visibility 1s ease 1s; /* Fade-out for non-chosen piles */
+}
+
+/* When a pile is scaled-up and centered */
+.pile.scale-up {
+  transform: scale(1.1);  /* Scale up the chosen pile */
+  position: absolute;     /* Take it out of the normal flow */
+  top: 50%;               /* Center it vertically */
+  left: 50%;              /* Center it horizontally */
+  transform: translate(-50%, -50%) scale(1.1);  /* Ensure the center point is also scaled */
+  z-index: 2;             /* Make sure it's above the other piles */
+}
+
+/* Ensure hover does not affect scale-up piles */
+.pile.scale-up:hover {
+  transform: translate(-50%, -50%) scale(1.1);  /* Keep it centered and scaled */
+}
+
+
+#result:empty {
+  padding: 0;
+}
+
+#result {
+  display: none;
+  font-size: 18px;         /* Adjusted for better readability */
+  padding: 20px;
+  margin: 10px auto;       /* Reduced margin between the result text and other elements */
+  max-width: 80%;          /* Limit the width of result text */
+  word-wrap: break-word;   /* Wrap text to avoid overflow */
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+  border-radius: 12px;      /* Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  width: 100%;             /* Allow the container to be flexible */
+  max-width: 500px;        /* Limit the maximum width for larger screens */
+  text-align: center;      /* Center text within the container */
+  box-sizing: border-box;  /* Ensure padding is included in the width */
+}
+
+/* Added to make the space between result text and the pile image smaller */
+#result p {
+  margin-top: 5px; /* Reduce the space between the text and the pile */
+}
+
+#reset {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #996633;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+#reset:hover {
+  background-color: #660000;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 500px) {
+  .container {
+    padding: 5px;         /* Reduce padding */
+    max-width: 80%;        /* Allow container to take more width */
+  }
+
+  .game-board {
+    gap: 2px;              /* Reduced gap between piles on mobile */
+  }
+
+  .pile {
+    max-width: 100%;        /* Allow piles to take up full width on mobile */
+    flex: 1 1 100%;         /* Make piles take up full width on small screens */
+  }
+
+  .pile-image {
+    width: 100%;             /* Ensure images fit in the pile */
+    margin: 0 auto;         /* Center images in their container */
+  }
+}
