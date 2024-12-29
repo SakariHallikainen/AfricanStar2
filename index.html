@@ -4,72 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>African Star II</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
 
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      transition: filter 2s ease;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      text-align: center;
-      color: white;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    h1 {
-      font-size: 6rem;
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-      margin: 0;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .click-text {
-      font-size: 1.5rem;
-      margin-top: 20px;
-      opacity: 0;
-      animation: fadeIn 2s ease-in-out 1s forwards;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    .click-area {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-    }
-
-
-
-  </style>
+  <link rel="stylesheet" href="landing-page.css"> <!-- Link your CSS file -->
+  <link rel="preload" href="video/AnimateBG.mp4" as="video">
+  
 </head>
 <body>
   <video class="video-background" autoplay muted loop>

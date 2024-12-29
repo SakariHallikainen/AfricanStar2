@@ -199,14 +199,14 @@ h1 {
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .container {
-    padding: 5px;         /* Reduce padding */
-    max-width: 80%;        /* Allow container to take more width */
+    padding: 3px;         /* Reduce padding */
+    width: 95%
   }
 
   .game-board {
-    gap: 2px;              /* Reduced gap between piles on mobile */
+    gap: 3px;              /* Reduced gap between piles on mobile */
   }
 
   .pile {
